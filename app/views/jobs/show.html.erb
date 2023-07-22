@@ -1,0 +1,9 @@
+<div class="container">
+    <h1><%= @job.title %></h1>
+    <p><%= @job.description%> </p>
+    <%= form_with model: @job, url: job_path(@job), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' } do |form| %>
+      <%= form.submit "Delete", class: "btn btn-danger" %>
+    <% end %>
+    <%= link_to "Edit", edit_job_path(@job), class: "btn btn-md btn-primary my-2"%>
+    <%= link_to "Back", jobs_path, class: "btn btn-md btn-warning my-2"%>
+</div>
